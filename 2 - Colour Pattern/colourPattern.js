@@ -1,19 +1,26 @@
 // JavaScript Document
 $(document).ready(function() {
 	
-	$('body').append("<div></div");
+	$('body').append("<div></div>");
+	
+	$('body').children().addClass('container');
+	
+	for(var i = 0; i<25;i++){
+	
+	$('.container').append('<div></div>');
+	
+	}
+	
+	$('.container').children().addClass("cells");
+	
+	$(".cells:even").addClass("firstClass");
+	
+	$(".cells:odd").addClass("secondClass");
+	
+
 	
 	
-	$
-	
-	
-	
-	
-	
-	
-	/*
-	
-	$(".firstClass").click(function(){
+	$(".firstClass").on("change",function(){
 		
 		
 		$(".firstClass").removeClass("firstClass");
@@ -36,7 +43,7 @@ $(document).ready(function() {
 	})
 	
 	
-	*/
+	
 	
 });
 

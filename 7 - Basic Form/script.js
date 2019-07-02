@@ -3,66 +3,51 @@ $(document).ready(function() {
 	
 	//CHECKING FOR COOKIE//
 	
+	if(doesCookieExist('username') == true){
+	
+		var name = getCookieValue('username');		
+	
+	}else{	
+	
+		var name="";
+	}
 	
 	$('body').append('<input class="name"></input>').append("<div>Name</div>");
 
 	$('.name').attr('value',name);
 	
-	var houses=["Ruby","Emerald","Topaz"];
+	var houses=["Ruby","Emerald","Topaz","diamonds"];
 	
 	$('body').append("<select class='dropdown'></select>");
 	
-	//Use a loop to append each of the houses as drop down options
-    
-    for(var i=0;i<houses.length;i++){
-        
-        $('.dropdown').append("<option>"+houses[i]+"</option>");
-        
-    }
+	for(var i=0;i<houses.length;i++){
+	
+		$("select").append("<option></option>").children().eq(i).html(houses[i]);	
+			
+	}
 	
 	$('body').append("<div>Score</div>").append('<input type ="number" class="age"></input>');
 	
 	
 	$('body').append('<input type="button" value="submit" class="submit">');
-    
-    
-    if(doesCookieExist("house")==true){
-        
-        alert("House Exists");
-        
-        $('.dropdown').val(getCookieValue("house"));
-        
-    }
-    
-    
-    if(doesCookieExist("name")==true){
-        
-        alert("name exists");
-        
-        $('.name').val(getCookieValue("name"));
-        
-    }
-    
 
 	$('.submit').click(function(){
 	
-	   var inputs = ["name","house", "age","favourite Station"];
+	var inputs = ["name","house", "age","favourite Station"];
 	
-        
-        inputs[0] = $('.name').val();
-        
-        inputs[3] = $('input:radio:checked').val();
-        
-        inputs[1] = $('.dropdown').val();
-        
-        console.log(inputs);
-        
-        setCookie("house",inputs[1],10);
-        setCookie("name",inputs[0],10);
-        
-        
-    });    
-    
+	inputs[1] = $('.dropdown').val();
+	
+	inputs[0] = $('.name').val();	
+	inputs[2] = parseInt($('.age').val());
+	inputs[3] = $('input:radio:checked').val();
+	
+	console.log(inputs);
+	
+	//STORING COOKIE//
+	
+	setCookie("username",inputs[0],10);
+	
+	});	
 
 function setCookie(cookieName,value,exdays){
 	var exdate=new Date();
