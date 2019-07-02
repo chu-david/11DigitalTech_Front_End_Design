@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+#clickBox {
+	height: 50px;
+	width: 50px;
+	border: 1px solid #F00;
+	line-height: 50px;
+	text-align: center;
+	color: #F00;
+	top: 100px;
+	position: absolute;
+}

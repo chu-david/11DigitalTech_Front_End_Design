@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+.container {
+	height: 50px;
+	width: 120px;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 40px;
+	border: 1px solid #F00;
+	font-size: 50px;
+	padding: 10px;
+	line-height: 50px;
+	text-align: center;
+}
+.button {
+	width: 100px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #CCC;
+	border: 1px solid #000;
+	text-align: center;
+}
